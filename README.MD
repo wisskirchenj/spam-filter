@@ -33,3 +33,5 @@ Have fun!
 
 12.11.23 Project started and Initial Repo setup.
 
+13.11.23 Stage 1 completed. Data preprocessing including lemmatization with en_core_sm model of SpaCy, stop words 
+and special characters removal, lower case conversion and number replacement.
