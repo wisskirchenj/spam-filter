@@ -1,6 +1,6 @@
 import spacy
 
-en_sm_model = spacy.load('en_core_web_sm')
+en_sm_model = spacy.load('en_core_web_sm')  # flake8: noqa: W291
 text = '''The mixing of Chinese and Portuguese culture and religious traditions for more than four centuries has left 
 Macau with an inimitable collection of holidays, festivals and events. The biggest event of the year is the Macau 
 Grand Prix each November, when the main streets of the Macau Peninsula are converted to a racetrack bearing 
