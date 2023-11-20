@@ -4,7 +4,6 @@
 import unittest
 
 import spacy
-from spacy.tokens import Token
 
 from spam.preprocess import transform_token
 
