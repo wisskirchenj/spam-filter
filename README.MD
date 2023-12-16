@@ -37,4 +37,5 @@ Have fun!
 and special characters removal, lower case conversion and number replacement.
 
 16.12.23 Stage 2 completed. Feature extraction from texts with Pandas. We use CountVectorizer to create a matrix of
-word counts and print its first 200 rows and 50 columns together with the data. 
+word counts and print its first 200 rows and 50 columns together with the data. We use @patch on custom method with
+MagicMock.return_value to mock the return value of the method.
