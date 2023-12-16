@@ -1,24 +1,17 @@
 import re
-import time
-
 import pandas as pd
 import spacy
-from string import punctuation
-
 from spacy.tokens import Token
+from string import punctuation
 
 nlp = spacy.load('en_core_web_sm')
 regex = re.compile('[%s]' % re.escape(punctuation))
 
 
 def load_and_preprocess_data() -> pd.DataFrame:
-    start_time = time.time()
     df = load_data()
     for row in df.iterrows():
         row[1]['SMS'] = preprocess(row[1]['SMS'])
-    pd.options.display.max_columns = df.shape[1]
-    pd.options.display.max_rows = df.shape[0]
-    print('Preprocessing took ' + str(time.time() - start_time) + ' seconds')
     return df
 
 
@@ -35,7 +28,7 @@ def preprocess(s: str) -> str:
 
 def transform_token(word: Token) -> str:
     result = regex.sub('', word.lemma_)
-    if result.isdigit():
+    if re.search(r'\d', result):
         result = 'aanumbers'
     elif nlp.vocab[result].is_stop:
         result = ''
