@@ -1,9 +1,11 @@
 import unittest
-import pandas as pd
-
 from io import StringIO
 from unittest.mock import patch, MagicMock
+
+import pandas as pd
+
 from spam.filter import Filter
+
 
 class TestFilter(unittest.TestCase):
 
