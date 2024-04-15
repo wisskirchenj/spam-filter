@@ -1,17 +1,17 @@
 import re
+from string import punctuation
+
 import pandas as pd
 import spacy
 from spacy.tokens import Token
-from string import punctuation
 
 nlp = spacy.load('en_core_web_sm')
-regex = re.compile('[%s]' % re.escape(punctuation))
+regex = re.compile(f'[{re.escape(punctuation)}]')
 
 
 def load_and_preprocess_data() -> pd.DataFrame:
     df = load_data()
-    for row in df.iterrows():
-        row[1]['SMS'] = preprocess(row[1]['SMS'])
+    df['SMS'] = df['SMS'].map(preprocess)
     return df
 
 

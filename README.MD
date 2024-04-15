@@ -5,7 +5,7 @@ Purpose of doing this project is to make progress in this track and improve ML k
 
 ## Technology / External Libraries
 
-- Python 3.11.6,
+- Python 3.12.3,
 - with packages: nltk, typing, unittest, unittest.mock, parameterized
 
 ## Repository Contents
@@ -16,7 +16,11 @@ The sources of main project tasks (6 stages) and pytest testing.
 
 Install the wheel file using pip after clone/fork:
 
-    > pip install dist/spam-filter-3.11.6-py3-none-any.whl
+    > pip install dist/spam-filter-3.12.3-py3-none-any.whl
+
+To use en_core_web_sm model of SpaCy, download it with the following command:
+
+    > python -m spacy download en_core_web_sm
 
 ## Program description
 
@@ -39,3 +43,6 @@ and special characters removal, lower case conversion and number replacement.
 16.12.23 Stage 2 completed. Feature extraction from texts with Pandas. We use CountVectorizer to create a matrix of
 word counts and print its first 200 rows and 50 columns together with the data. We use @patch on custom method with
 MagicMock.return_value to mock the return value of the method.
+
+15.04.24 Stage 3 completed. Conditional probability calculation for spam and ham messages. We calculate the probability
+using Naive Bayes algorithm and print the results.

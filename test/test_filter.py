@@ -41,7 +41,9 @@ class TestFilter(unittest.TestCase):
         filter_obj.main()
         # Assert that the printed output matches the expected shape and values
         lines = mock_stdout.getvalue().splitlines()
-        self.assertEqual(3, len(lines))
-        self.assertEqual('  Target            SMS  email  hello  message  spam', lines[0])
-        self.assertEqual('0   spam     spam email      1      0        0     1', lines[1])
-        self.assertEqual('1    ham  hello message      0      1        1     0', lines[2])
+        self.assertEqual(6, len(lines))
+        self.assertEqual('SpamprobabilityHamprobability', lines[0].replace(' ', ''))
+        self.assertEqual('email0.3333330.166667', lines[1].replace(' ', ''))
+        self.assertEqual('hello0.1666670.333333', lines[2].replace(' ', ''))
+        self.assertEqual('message0.1666670.333333', lines[3].replace(' ', ''))
+        self.assertEqual('spam0.3333330.166667', lines[4].replace(' ', ''))

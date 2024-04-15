@@ -1,5 +1,10 @@
 import stanza
 
+
+def addition(a: "first number", b: "second number") -> "sum of two numbers":
+    return a + b
+
+
 nlp = stanza.Pipeline(lang='ko', processors='tokenize,pos')
 
 with open('../../data/korean.txt', encoding='utf-8') as f:
