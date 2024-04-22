@@ -16,7 +16,7 @@ class ProbabilityAssessor:
         probabilities = probabilities.apply(lambda x: self.word_probability(x, x.name))
         probabilities.columns = ['Spam probability', 'Ham probability']
         return probabilities
-    
+
     def word_probability(self, n: int, target: str) -> float:
         return (n + self.laplace_smoothing) / (self.frequencies[target] + self.laplace_smoothing * self.nvocab)
 
